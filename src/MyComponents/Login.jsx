@@ -2,23 +2,21 @@ import { useState } from "react";
 import { Link } from "react-router-dom"
 import {auth} from '../firebaseConfig';
 import HeaderPart from "./HeaderPart";
+import { useAlert } from 'react-alert'
 
 
 function Login(){
+  const alert = useAlert()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [login, setLogin]=useState(false)
     const handleLogin=()=>{
-        auth.signInWithEmailAndPassword(email, password)
+        auth.signInWithEmailAndPassword(email,password)
           .then((ok) => {
-           alert("logged")
-            console.log("done")
-            setLogin(true)
-            // ...
-          })
-          .catch((error) => {
-            console.log("not")
-            // ..
+           setLogin(true)
+
+          }).catch((error) => {
+            alert.error('Not a valid user')
           });
         }
     return (

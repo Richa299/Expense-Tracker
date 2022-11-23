@@ -9,24 +9,18 @@ export const GlobalStyle=createGlobalStyle`
     justify-content:center;
     color:blue;
 }
-.items{
-    // display:flex;
-    // align-items:center;
-    // flex-direction:column;
-}
 .login{
     background-image:linear-gradient(to right, #1A2980 , #26D0CE);
-   //background-image:linear-gradient(to right, #1D2B64 , #F8CDDA);
     margin:auto;
     width:40vw;
-    height:50vh;
+    height:15rem;
     border-radius:10px;
 }
 .Signup{
     background-color:wheat;
     margin:auto;
     width:40vw;
-    height:60vh;
+    height:20rem;
     background-image:linear-gradient(to right, #1A2980 , #26D0CE);
     border-radius:10px;
 }
@@ -74,6 +68,7 @@ input{
     align-items:center;
     max-width:40vw;
     margin:auto;
+
     border-radius:10px;
     background-image:linear-gradient(to right, #1D2B64 , #F8CDDA);
 }
@@ -94,7 +89,7 @@ input{
   font-family:Monaco;
   border-radius:5px;
   border:1px solid WHITE;
-  box-shadow: 2px 2px white;
+//   box-shadow: 2px 2px white;
   background-color:blue  ;
   cursor:pointer;
 }
@@ -154,9 +149,12 @@ input{
     margin-left:5px
 }
 .heading{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
     font-family:Monaco;
     color:white;
-    font-size:40px;
     text-shadow: 3px 1px 2px black;
 }
 .one{
@@ -231,5 +229,62 @@ input{
     max-height: 20vh;
     overflow-y: auto;
 }
+.exit-app{
+font-size:0.7rem;
+margin-left:2rem;
+text-decoration:none;
+text-shadow:0px 0px 0px transparent;
+border:1px solid gray;
+background-color:white;
+padding:4px;
+border-radius:5px;
+}
+.exit-app:hover{
+    background-color:green;
+    color:white;
+}
 
+@media screen and (min-width: 1200px) and (max-width: 1500px){
+   
+    .header{
+        max-width:60vw;
+     }
+     .trans{
+        width:22rem;
+        height:2rem;
+    }
+}
+@media screen and (min-width: 820px) and (max-width: 1200px){
+   
+    .header{
+        max-width:60vw;
+     }
+     .trans{
+        width:20rem;
+        height:2rem;
+    }
+}
+
+
+@media screen and (min-width: 600px) and (max-width: 820px){
+    .header{
+        max-width:70vw;
+     }
+     .trans{
+        width:18rem;
+        height:2.3rem;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 600px){
+    
+    .header{
+       max-width:700vw;
+    }
+    .trans{
+        width:20rem;
+        height:2rem;
+    }
+    
+}
 `;

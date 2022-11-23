@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../firebaseConfig";
 import HeaderPart from "./HeaderPart";
+import { useAlert } from 'react-alert'
 // import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 function SignUp(){
+  const alert = useAlert()
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -14,14 +16,11 @@ function SignUp(){
 const handleSignup=()=>{
 auth.createUserWithEmailAndPassword(email, password)
   .then((ok) => {
-   alert("created")
-    //console.log("done")
+    alert.success("Signup successfully")
     setSign(true)
-
-    // ...
   })
   .catch((error) => {
-    console.log("not")
+    alert.error("User already exist!")
     // ..
   });
 }
@@ -47,7 +46,7 @@ auth.createUserWithEmailAndPassword(email, password)
             </p>
         </div>
         </div>
-        :console.log('thk')}
+        :console.log('error')}
         {sign?<HeaderPart/>:console.log("error")}
        </div>
     )
