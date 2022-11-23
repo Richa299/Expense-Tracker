@@ -94,6 +94,7 @@ function HeaderPart() {
                        onChange={handleItem} 
                        value={textInput} />
 
+
                 <input className="add-price" 
                         type="number" 
                         placeholder="Amount" 
